@@ -27,27 +27,14 @@ public class Pertanyaan {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id_pertanyaan;
+	private long id;
 	
-	@Column (name = "pertanyaan")
-	private String pertanyaan;
-	@Column (name = "jawaban_1")
-	private String jawaban_1;
-	@Column (name = "jawaban_2")
-	private String jawaban_2;
-	@Column (name = "jawaban_3")
-	private String jawaban_3;
-	@Column (name = "jawaban_4")
-	private String jawaban_4;
-	@Column (name = "jawaban_benar")
-	private String jawaban_benar;
-	@Column (name = "jawaban_gambar")
-	private String status_gambar;
-	
-	
-	@OneToOne (cascade = CascadeType.ALL)
-	@JoinColumn (name = "detail_nilai")
-	private Nilai nilai;
-	
+	private String pertanyaan1;
+	private String jawaban1;
+	private String jawaban2;
+	private String jawaban3;
+	private String jawaban4;
+	private String jawabanBenar;
+	private String statusGambar;
 	
 }

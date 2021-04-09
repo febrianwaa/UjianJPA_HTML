@@ -26,12 +26,11 @@ public class Dosen {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id_dosen;
+	private long idDosen;
 	
 	private String username;
 	private String password;
-	private String nama_dosen;
+	private String namaDosen;
 	
-	@ManyToMany (mappedBy = "lstdosen")
-	private List <PlotMataKuliah> lstPlotMataKuliah = new ArrayList<PlotMataKuliah>();
+	
 }

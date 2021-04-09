@@ -24,12 +24,11 @@ public class Mahasiswa {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id_nim;
-	
-	private String nama_mahasiswa;
-	private String jenis_kelamin;
+	private long idMahasiswa;
+	private String nim;
+	private String namaMahasiswa;
+	private String jenisKelamin;
 	private String password;
 	
-	@ManyToMany (mappedBy = "lstmahasiswa")
-	private List <PlotMataKuliah> lstPlotMataKuliah = new ArrayList<PlotMataKuliah>();
+	
 }

@@ -20,6 +20,6 @@ public class Nilai {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_soal;
-	private int nilai;
+	private long idNilai;
+	private String nilai;
 }

@@ -1,13 +1,11 @@
 package com.jpa.ujian.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -18,15 +16,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="matakuliah")
-public class MataKuliah {
+@Table(name="admin_user")
+public class AdminUser {
 
-	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long idMatakuliah;
 	
-	private String namaMatakuliah;
+	private long idAdmin;
+	private String username;
+	private String password;
 	
 	
 }

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -29,14 +30,17 @@ public class Soal {
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private long id_soal;
+	private long id;
 	
-	@Column (name = "nama_soal")
-	private String nama_soal;
-	@Column (name = "status")
-	private String status;
+	private String namaSoal;
+	private int status;
 	
 	@OneToMany (cascade = CascadeType.ALL)
-	@JoinColumn (name="soal_id", referencedColumnName = "id_soal")
+	@JoinColumn (name="id_soal", referencedColumnName = "id")
 	private List<Pertanyaan> lstPertanyaan = new ArrayList<Pertanyaan>();
+
+	@OneToOne (cascade = CascadeType.ALL)
+	@JoinColumn (name = "id_nilai")
+	private Nilai nilai;
+
 }

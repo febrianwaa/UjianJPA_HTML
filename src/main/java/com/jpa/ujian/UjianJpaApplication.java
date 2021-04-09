@@ -31,113 +31,71 @@ public class UjianJpaApplication implements CommandLineRunner {
 		SpringApplication.run(UjianJpaApplication.class, args);
 	}
 
-	@Autowired
-	SoalRepository soalRepository;
 	
 	@Autowired
-	PertanyaanRepository pertanyaanRepository;
+	PlotMataKuliahRepository plotMK;
 	
-	@Autowired
-	NilaiRepository nilaiRepository;
-	
-	@Autowired
-	DosenRepository dosenRepository;
-	
-	@Autowired
-	MahasiswaRepository mahasiswaRepository;
-	
-	@Autowired
-	MataKuliahRepository mataKuliahRepository;
-	
-	@Autowired
-	PlotMataKuliahRepository plotMataKuliahRepository;
+//	@Autowired
+//	private SoalRepository soalRepo;
 	
 	public void run (String...args) throws Exception {
 		
-/*		Soal soal = new Soal ();
-		soal.setNama_soal("Biologi");
-		soal.setStatus("2_Pertanyaan");
+/*
+		
+		PlotMataKuliah plotMK = new PlotMataKuliah();
+		
+		Mahasiswa mahasiswa = new Mahasiswa();
+		mahasiswa.setNamaMahasiswa("Wicak");
+		mahasiswa.setJenisKelamin("Pria");
+		mahasiswa.setNim("12345");
+		mahasiswa.setPassword("rahasia");
+		
+		plotMK.setMahasiswa(mahasiswa);
+		
+		Dosen dosen = new Dosen();
+		dosen.setNamaDosen("Joko");
+		dosen.setUsername("Jokooo");
+		dosen.setPassword("opoo");
+		
+		plotMK.setDosen(dosen);
+		
+		MataKuliah matakuliah = new MataKuliah();
+		matakuliah.setNamaMatakuliah("Psikologi");
+		
+		plotMK.setMatakuliah(matakuliah);
+		
+		List<Soal> lstSoal = new ArrayList<Soal>();
+		
+		Soal soal1 = new Soal();
+		soal1.setNamaSoal("Skakmat Aqil");
+		soal1.setStatus(1);
+		
+		Nilai nilai = new Nilai();
+		nilai.setNilai("80");
+		soal1.setNilai(nilai);
 		
 		Pertanyaan pertanyaan1 = new Pertanyaan();
-		pertanyaan1.setPertanyaan("ikan bernafas dengan?");
-		pertanyaan1.setJawaban_1("paru-paru");
-		pertanyaan1.setJawaban_2("trakea");
-		pertanyaan1.setJawaban_3("jantung");
-		pertanyaan1.setJawaban_4("insang");
-		pertanyaan1.setJawaban_benar("insang");
-		pertanyaan1.setStatus_gambar("ikan");
-		
-		Pertanyaan pertanyaan2 = new Pertanyaan();
-		pertanyaan2.setPertanyaan("burung bernafas dengan?");
-		pertanyaan2.setJawaban_1("paru-paru");
-		pertanyaan2.setJawaban_2("trakea");
-		pertanyaan2.setJawaban_3("jantung");
-		pertanyaan2.setJawaban_4("insang");
-		pertanyaan2.setJawaban_benar("trakea");
-		pertanyaan2.setStatus_gambar("burung");
+		pertanyaan1.setPertanyaan("Siapa Dewa Kipas");
+		pertanyaan1.setJawaban1("Sidiq");
+		pertanyaan1.setJawaban2("Dadang");
+		pertanyaan1.setJawaban3("Jouzu");
+		pertanyaan1.setJawaban4("Tidak ada yang benar");
+		pertanyaan1.setJawabanBenar("2");
+		pertanyaan1.setStatusGambar("https://akcdn.detik.net.id/community/media/visual/2021/03/19/dadang-subur-dewa-kipas-1_169.jpeg");
 		
 		List<Pertanyaan> lstPertanyaan = new ArrayList<Pertanyaan>();
 		lstPertanyaan.add(pertanyaan1);
-		lstPertanyaan.add(pertanyaan2);
-		
-		soal.setLstPertanyaan(lstPertanyaan);
-		this.soalRepository.save(soal);
+		soal1.setLstPertanyaan(lstPertanyaan);
 		
 		
-		Nilai nilai1 = new Nilai();
-		nilai1.setNilai(20);
+		lstSoal.add(soal1);
 		
-		Nilai nilai2 = new Nilai();
-		nilai2.setNilai(30);
-		
-		pertanyaan1.setNilai(nilai1);
-		pertanyaan2.setNilai(nilai2);
-		this.pertanyaanRepository.save(pertanyaan1);
-		this.pertanyaanRepository.save(pertanyaan2);   */
-		
-//penjelasan dari source diatas : setiap jenis soal memiliki beberapa pertanyaan,
-//									 dan setiap pertanyaan memiliki point nilai
-		
-		
-//------------------------------------------------------------------------------------		
-		
-		
-		Dosen dosen = new Dosen();
-		dosen.setUsername("dindaaa");
-		dosen.setPassword("prikitiew");
-		dosen.setNama_dosen("dinda");
-		
-		Mahasiswa mahasiswa = new Mahasiswa();
-		mahasiswa.setNama_mahasiswa("Bima");
-		mahasiswa.setJenis_kelamin("Laki-laki");
-		mahasiswa.setPassword("bimasehat");
-		
-		MataKuliah matakuliah = new MataKuliah();
-		matakuliah.setNama_matakuliah("Industri");
-		
-		List<Dosen> lstdosen = new ArrayList<Dosen>();
-		lstdosen.add(dosen);
-		
-		List<Mahasiswa> lstmahasiswa = new ArrayList<Mahasiswa>();
-		lstmahasiswa.add(mahasiswa);
-		
-		List<MataKuliah> lstmatakuliah = new ArrayList<MataKuliah>();
-		lstmatakuliah.add(matakuliah);
-		
-		PlotMataKuliah plotmatakuliah = new PlotMataKuliah();
-		
-		plotmatakuliah.setLstdosen(lstdosen);
-		plotmatakuliah.setLstmahasiswa(lstmahasiswa);
-		plotmatakuliah.setLstmatakuliah(lstmatakuliah);
-		this.plotMataKuliahRepository.save(plotmatakuliah);
-
-//Penjelasan diatas : untuk menggabungkan table mahasiswa, tabel dosen, tabel mata kuliah
-//                    menjadi satu didalam tabel plot mata kuliah
-		
-
-//------------------------------------------------------------------------------------------		
+		plotMK.setLstSoal(lstSoal);
+		this.plotMK.save(plotMK);*/
 		
 		
 		
+//		Soal soalx = this.soalRepo.findByNamaSoal("Soal Percintaan");
+//		System.out.println(soalx.getNamaSoal());
 	}
 }
